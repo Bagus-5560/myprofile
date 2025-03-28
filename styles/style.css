@@ -8,7 +8,7 @@
     --lineColor: #d9d9d9; 
   
     --primaryBackgroundColor: #fff;
-    --secondaryBackgroundColor: #fbfbfb;
+    --secondaryBackgroundColor: #f6f6f6;
     --thirdBackgroundColor: #f5f3fe;
   
     --primaryIconColor: #7e74f1;
@@ -23,7 +23,8 @@
 *{
     margin:0;
     padding:0;
-    box-sizing:0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -47,13 +48,13 @@ a {
     text-decoration: none;
 }
 
-.main_container {
+.main-container {
     width: 1200px;
     margin: 0 auto;
 }
 
 @media screen and (max-width: 1200px){
-    .main_container{
+    .main-container{
     width: 90%;
     }
 }
@@ -63,12 +64,19 @@ a {
     background: white;
     border: 2px solid var(--borderColor);
     cursor: pointer;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .btn:hover {
     box-shadow:  rgba(0, 0, 0, 0.1) 0px 4px 6px;
 }
+
+/* Titles */
+
+.section-title {
+    margin: 1rem 0 4rem;
+    font-size: 2rem;
+  }
 
 .pre-title {
     text-transform: uppercase;
@@ -92,6 +100,26 @@ a {
     top: 50%;
 }
 
+.pre-title::after{
+    content: "";
+    width: 30px;
+    height: 1px;
+    background: var(--lineColor) ;
+    position: absolute;
+    display: block;
+    right: -2rem;
+    top: 50%;
+}
+
+/* Layout */
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+/* Logo & Navigasi Menu */
 .nav {
     display: flex;
     justify-content: space-between;
@@ -112,7 +140,7 @@ a {
 }
 
 .logo a {
-    color: var(--primaryTextColor);
+    color: var(--primaryIconColor);
 }
 
 nav ul li {
@@ -129,7 +157,7 @@ nav ul li a {
     height: 2px;
     background-color: black;
     margin: 7px;
-    transition: all .3s;
+    transition: all 0.3s;
     z-index: 99;
 }
 
@@ -155,5 +183,55 @@ nav ul li a {
 }
 
 .hero-name span{
-    color: var(--primaryIconColor);
+    color: var(--primaryIconColor) !important;
+}
+
+.hero-right{
+    display: flex;
+    justify-content: center;
+}
+
+.hero-right img {
+    width: 40%;
+
+}
+
+/* Bagian Services*/
+#services {
+    background-color: var(--secondaryBackgroundColor);
+    padding: var(--sectionPadding);
+}
+
+.services .pre-title{
+    margin: 0 auto;
+}
+
+.section-title{
+    text-align: center;
+}
+
+.service {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: var(--primaryBackgroundColor);
+    border-radius: var(--itemBorderRadius);
+}
+
+.service h4{
+    margin: 1.5rem 0;
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.service-icon{
+    background-color: var(--thirdBackgroundColor);
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem 1.3rem;
+    border-radius: 0.5rem;
+
+}
+
+.service-icon svg{
+    fill: var(--primaryIconColorHover);
 }
