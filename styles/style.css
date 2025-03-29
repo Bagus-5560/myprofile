@@ -5,7 +5,9 @@
     --secondaryTextColor: #656d72; 
   
     --borderColor: #f1f1f1;
-    --lineColor: #d9d9d9; 
+    --lineColor: #d9d9d9;
+    --linedotccollor:#b2b2b2dd;
+    --dotccollor:#323232dd; 
   
     --primaryBackgroundColor: #fff;
     --secondaryBackgroundColor: #f6f6f6;
@@ -320,9 +322,9 @@ nav ul li a:hover {
 }
 
 .education .line div {
-    width: 2px;
+    width: 3px;
     height: 100%;
-    background: var(--borderColor);
+    background: var(--linedotccollor);
     position: relative;
 }
 
@@ -339,7 +341,7 @@ nav ul li a:hover {
     content: "";
     width: 15px;
     height: 15px;
-    background: var(--borderColor);
+    background: var(--dotccollor);
     border-radius: 50%;
     position: absolute;
     left: -6px;
